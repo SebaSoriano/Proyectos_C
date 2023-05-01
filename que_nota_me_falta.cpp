@@ -3,8 +3,8 @@
 
 int main(){
 	
-	float nota2, nota3, nota4, nota5, nota6, nota7, nota8, notax, prom; /*Define las notas*/
-	float pond2, pond3, pond4, pond5, pond6, pond7, pond8, pondx; /*Define las ponderaciones*/
+	float notax, nota2, nota3, nota4, nota5, nota6, nota7, nota8; /*Define las notas*/
+	float pondx, pond2, pond3, pond4, pond5, pond6, pond7, pond8; /*Define las ponderaciones*/
 	int op1, ola, resp; /*Define los niveles de opciones para los switch*/
 	ola=1;
 	
@@ -98,9 +98,9 @@ int main(){
 					}
 				} while (nota2<1 || nota2>7 || nota3<1 || nota3>7 || nota4<1 || nota4>7 || pond2<=0 || pond2>99 || pond3<=0 || pond3>99 || pond4<=0 || pond4>99);
 					
-				pondx=(100-pond2-pond3)/100; /*Calculo de la ponderacion faltante*/
+				pondx=(100-pond2-pond3-pond4)/100; /*Calculo de la ponderacion faltante*/
 					
-				notax=(4-(nota2*(pond2/100))-(nota3*(pond3)/100))/pondx;
+				notax=(4-(nota2*(pond2/100))-(nota3*(pond3/100))-(nota4*(pond4/100)))/pondx;
 				if(notax<=1){
 					printf("Con un 1 pasas el ramo\n");
 				} else {
@@ -109,6 +109,41 @@ int main(){
 				break;
 				
 			case 5:
+				
+				printf("Ingresa tus primeras notas y sus ponderaciones\n"); /*Ingreso de la unica nota*/
+				do { /*Validacion de la entrada nota2*/
+					printf("Nota 1: ");
+					scanf("%f", &nota2);
+					printf("Ponderacion 1: ");
+					scanf("%f", &pond2);
+					printf("Nota 2: ");
+					scanf("%f", &nota3);
+					printf("Ponderacion 2: ");
+					scanf("%f", &pond3);
+					printf("Nota 3: ");
+					scanf("%f", &nota4);
+					printf("Ponderacion 3: ");
+					scanf("%f", &pond4);
+					printf("Nota 4: ");
+					scanf("%f", &nota5);
+					printf("Ponderacion 4: ");
+					scanf("%f", &pond5);
+					if(nota2<1 || nota2>7 || nota3<1 || nota3>7 || nota4<1 || nota4>7 || nota5<1 || nota5>7){
+						printf("Parece que una nota no es valida\n");
+					}
+					if(pond2<=0 || pond2>99 || pond3<=0 || pond3>99 || pond4<=0 || pond4>99 || pond5<=0 || pond5>99){
+						printf("Parece que una ponderacion no es valida\n");
+					}
+				} while (nota2<1 || nota2>7 || nota3<1 || nota3>7 || nota4<1 || nota4>7 || pond2<=0 || pond2>99 || pond3<=0 || pond3>99 || pond4<=0 || pond4>99 || nota5<1 || nota5>7 || pond5<=0 || pond5>99);
+					
+				pondx=(100-pond2-pond3-pond4-pond5)/100; /*Calculo de la ponderacion faltante*/
+					
+				notax=(4-(nota2*(pond2/100))-(nota3*(pond3/100))-(nota4*(pond4/100))-(nota5*(pond5/100)))/pondx;
+				if(notax<=1){
+					printf("Con un 1 pasas el ramo\n");
+				} else {
+					printf("Con un %.1f pasas el ramo\n", notax);	
+				}	
 					
 				break;
 			
