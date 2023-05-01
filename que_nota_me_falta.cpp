@@ -56,7 +56,7 @@ int main(){
 					scanf("%f", &nota3);
 					printf("Ponderacion 2: ");
 					scanf("%f", &pond3);
-					if(nota2<=0 || nota2>99 || nota3<=0 || nota3>99){
+					if(nota2<1 || nota2>7 || nota3<1 || nota3>7){
 						printf("Parece que una nota no es valida\n");
 					}
 					if(pond2<=0 || pond2>99 || pond3<=0 || pond3>99){
@@ -76,7 +76,36 @@ int main(){
 				break;
 				
 			case 4:
+				printf("Ingresa tus primeras notas y sus ponderaciones\n"); /*Ingreso de la unica nota*/
+				do { /*Validacion de la entrada nota2*/
+					printf("Nota 1: ");
+					scanf("%f", &nota2);
+					printf("Ponderacion 1: ");
+					scanf("%f", &pond2);
+					printf("Nota 2: ");
+					scanf("%f", &nota3);
+					printf("Ponderacion 2: ");
+					scanf("%f", &pond3);
+					printf("Nota 3: ");
+					scanf("%f", &nota4);
+					printf("Ponderacion 3: ");
+					scanf("%f", &pond4);
+					if(nota2<1 || nota2>7 || nota3<1 || nota3>7 || nota4<1 || nota4>7){
+						printf("Parece que una nota no es valida\n");
+					}
+					if(pond2<=0 || pond2>99 || pond3<=0 || pond3>99 || pond4<=0 || pond4>99){
+						printf("Parece que una ponderacion no es valida\n");
+					}
+				} while (nota2<1 || nota2>7 || nota3<1 || nota3>7 || nota4<1 || nota4>7 || pond2<=0 || pond2>99 || pond3<=0 || pond3>99 || pond4<=0 || pond4>99);
 					
+				pondx=(100-pond2-pond3)/100; /*Calculo de la ponderacion faltante*/
+					
+				notax=(4-(nota2*(pond2/100))-(nota3*(pond3)/100))/pondx;
+				if(notax<=1){
+					printf("Con un 1 pasas el ramo\n");
+				} else {
+					printf("Con un %.1f pasas el ramo\n", notax);	
+				}	
 				break;
 				
 			case 5:
