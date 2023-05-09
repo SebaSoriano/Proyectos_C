@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 #include <unistd.h>
 
 int main(){
@@ -38,10 +38,10 @@ int main(){
 			uni = uni+1;
 		}//resta 1 hasta que n sea menor a 1
 	
-		printf("Unidades: %.0f\n", uni);
+	  /*printf("Unidades: %.0f\n", uni);
 		printf("Decenas: %.0f\n", dec);
 		printf("Centenas: %.0f\n", cen);
-		printf("Unidades de mil: %.0f\n", umi);
+		printf("Unidades de mil: %.0f\n", umi);*/
 	
 		if (umi>0 && cen>0 && dec>0 && uni>0){
 			atg = (umi*umi*umi*umi)+(cen*cen*cen*cen)+(dec*dec*dec*dec)+(uni*uni*uni*uni);
@@ -103,7 +103,7 @@ int main(){
 			}
 		}
 		
-	}//fin while grande
+	}//fin while principal
 
 	
 	return(0);
