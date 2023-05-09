@@ -38,7 +38,7 @@ int main(){
 			uni = uni+1;
 		}//resta 1 hasta que n sea menor a 1
 	
-	  /*printf("Unidades: %.0f\n", uni);
+	  	/*printf("Unidades: %.0f\n", uni);
 		printf("Decenas: %.0f\n", dec);
 		printf("Centenas: %.0f\n", cen);
 		printf("Unidades de mil: %.0f\n", umi);*/
