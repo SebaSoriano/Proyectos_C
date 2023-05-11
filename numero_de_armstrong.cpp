@@ -2,9 +2,12 @@
 #include <unistd.h>
 
 int main(){
-	float x, n, uni, dec, cen, umi, atg;
+	float x, n, uni, dec, cen, umi, atg_umi, atg_cen, atg_dec;
 	int resp, ola;
 	ola=1;
+	atg_umi = (umi*umi*umi*umi)+(cen*cen*cen*cen)+(dec*dec*dec*dec)+(uni*uni*uni*uni);
+	atg_cen = (cen*cen*cen)+(dec*dec*dec)+(uni*uni*uni);
+	atg_dec = (dec*dec)+(uni*uni);
 	
 	while (ola!=0){
 		printf("Calculadora de numero de armstrong\n");
@@ -38,54 +41,23 @@ int main(){
 			uni = uni+1;
 		}//resta 1 hasta que n sea menor a 1
 	
-	  	/*printf("Unidades: %.0f\n", uni);
+		/*printf("Unidades: %.0f\n", uni);
 		printf("Decenas: %.0f\n", dec);
 		printf("Centenas: %.0f\n", cen);
 		printf("Unidades de mil: %.0f\n", umi);*/
 	
-		if (umi>0 && cen>0 && dec>0 && uni>0){
-			atg = (umi*umi*umi*umi)+(cen*cen*cen*cen)+(dec*dec*dec*dec)+(uni*uni*uni*uni);
-			if (atg==x){
-				printf("El numero %.0f es un numero de Armstrong\n", x);
-			} else {
-				printf("El numero %.0f no es un numero de Armstrong\n", x);	
-			}
-		
+		if (umi>0 && atg_umi == x){
+			printf("%.0f es un numero de Armstrong\n", x);
 		} else {
-			if (cen>0 && dec>0 && uni>0){
-				atg = (cen*cen*cen)+(dec*dec*dec)+(uni*uni*uni);
-				if (atg==x){
-					printf("El numero %.0f es un numero de Armstrong\n", x);
-				
-				} else {
-					printf("El numero %.0f no es un numero de Armstrong\n", x);	
-				}
-			
+			if (cen>0 && atg_cen == x){
+				printf("%.0f es un numero de Armstrong\n", x);
 			} else {
-				if (dec>0 && uni>0){
-					atg = (dec*dec)+(uni*uni);
-					if (atg==x){
-						printf("El numero %.0f es un numero de Armstrong\n", x);
-					
-					} else {
-						printf("El numero %.0f no es un numero de Armstrong\n", x);	
-					}
-				
+				if (dec>0 && atg_dec == x){
+					printf("%.0f es un numero de Armstrong\n", x);
 				} else {
-					if (uni>0){
-						atg = uni;
-						if (atg==x){
-							printf("El numero %.0f es un numero de Armstrong\n", x);
-						
-						} else {
-							printf("El numero %.0f no es un numero de Armstrong\n", x);	
-						}
-					
-					} else {
-						printf("El numero %.0f no es un numero de Armstrong\n", x);	
-					}
+						printf("%.0f es un numero de Armstrong\n", x);
 				}
-			}
+			} 
 		}
 		
 		printf("\nQuieres evaluar otro numero?\n");
