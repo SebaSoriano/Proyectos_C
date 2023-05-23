@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#define p 5
+#define p 5 //defini una constante pq cuando el array es mas grande que la palabra siempre sale que no es un isograma
 
 int main(){
 	char palabra[p];
